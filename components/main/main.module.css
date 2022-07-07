@@ -1,11 +1,11 @@
 .img {
   display: none;
+  width: 100%;
+  height: auto;
 }
 
 .img-active {
   display: block;
-  width: 100%;
-  height: auto;
 }
 
 .section {
@@ -27,16 +27,11 @@
 
 .section a {
   display: flex;
+  align-items: center;
   letter-spacing: .5em;
   text-transform: capitalize;
   font-weight: 600;
 }
-
-.section a img {
-  width: 2.5rem;
-  height: auto;
-}
-
 
 .section-active {
   display: block;
@@ -68,6 +63,12 @@
     grid-template-rows: 1fr;
   }
   
+  .section {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 950px) {
   .section {
     padding: 3rem;
   }

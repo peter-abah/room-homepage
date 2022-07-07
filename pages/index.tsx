@@ -7,6 +7,7 @@ import Image from 'next/image'
 
 import Header from '../components/header';
 import Main from '../components/main';
+import About from '../components/about';
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), 'data.json');
@@ -33,26 +34,7 @@ const Home: NextPage = ({ data }) => {
         <Main data={main} />
       </div>
         
-      <section>
-        <Image
-          src={about.imgDark}
-          height={266}
-          width={440}
-          alt="One of our products. A coffee table with a pair of lounge chairs"
-        />
-
-        <div>
-          <h3>{about.heading}</h3>
-          <p>{about.body}</p>
-        </div>
-
-        <Image
-          src={about.imgLight}
-          height={266}
-          width={440}
-          alt="One of our products.A white chair"
-        />
-      </section>
+      <About data={about} />
     </div>
   )
 }
