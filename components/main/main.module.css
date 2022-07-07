@@ -1,0 +1,78 @@
+.img {
+  display: none;
+}
+
+.img-active {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.section {
+  display: none;
+  padding: 3rem 1.5rem;
+}
+
+.section h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: .675rem;
+  color: hsl(0, 0%, 63%);
+  margin-bottom: 1.2rem;
+}
+
+.section a {
+  display: flex;
+  letter-spacing: .5em;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.section a img {
+  width: 2.5rem;
+  height: auto;
+}
+
+
+.section-active {
+  display: block;
+}
+
+.btns-wrapper {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+}
+
+.btns-wrapper button {
+  padding: 1.25rem;
+  background-color: black;
+  color: white;
+}
+
+.btns-wrapper img {
+  height: auto;
+  width: 12px;
+}
+
+@media screen and (min-width: 48rem) {
+  .main {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr;
+  }
+  
+  .section {
+    padding: 3rem;
+  }
+  
+  .btns-wrapper {
+    transform: translateX(100%);
+  }
+}
