@@ -11,7 +11,7 @@ import About from '../components/about';
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), 'data.json');
-  const jsonData = fs.readFileSync(filePath);
+  const jsonData = fs.readFileSync(filePath, 'utf-8');
   const data = JSON.parse(jsonData);
   
   return {
@@ -19,7 +19,7 @@ export async function getStaticProps() {
   }
 }
 
-const Home: NextPage = ({ data }) => {
+const Home: NextPage<any> = ({ data }) => {
   const { about, main } = data;
   return (
     <div>

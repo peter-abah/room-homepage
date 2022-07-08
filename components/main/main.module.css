@@ -1,16 +1,42 @@
-.img {
-  display: none;
+.img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  transform: scale(2);
+  transition-property: opacity, transform;
+  transition-duration: .6s;
+  transition-timing-function: ease-out;
 }
 
-.img-active {
-  display: block;
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.imgs-container {
+  padding-top: 96%; /* For aspect ratio */;
+  position: relative;
+  overflow: hidden;
+}
+
+.active-img {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .section {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity .6s ease-out;
   padding: 3rem 1.5rem;
+  background: white;
 }
 
 .section h2 {
@@ -20,8 +46,8 @@
 }
 
 .section p {
-  font-size: .675rem;
   color: hsl(0, 0%, 63%);
+  font-size: 12px;
   margin-bottom: 1.2rem;
 }
 
@@ -33,22 +59,34 @@
   font-weight: 600;
 }
 
+.section a:hover {
+  color: hsl(0, 0%, 63%);
+}
+
 .section-active {
-  display: block;
+  position: static;
+  opacity: 1;
 }
 
 .btns-wrapper {
   display: flex;
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 0;
+  transform: translateY(-100%);
   background-color: black;
+  z-index: 10;
 }
 
 .btns-wrapper button {
   padding: 1.25rem;
   background-color: black;
   color: white;
+  transition: background-color .6s ease-out;
+}
+
+.btns-wrapper button:hover {
+  background-color: hsl(0, 0%, 27%);
 }
 
 .btns-wrapper img {
@@ -63,6 +101,10 @@
     grid-template-rows: 1fr;
   }
   
+  .imgs-container {
+    padding-top: 63.57%; /* Aspect ratio for larger image */
+  }
+  
   .section {
     padding: 1.5rem;
   }
@@ -74,6 +116,10 @@
   }
   
   .btns-wrapper {
-    transform: translateX(100%);
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    transform: translateY(0);
   }
 }
